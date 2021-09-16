@@ -18,11 +18,6 @@ pipeline {
             }
         }
         
-       
-        stage("deploy to container"){
-            steps{
-                deploy adapters: [tomcat9(credentialsId: 'bf6f41cc-a041-4d9f-ba7d-7e3f791dde53', path: '', url: 'http://localhost:1111/')], contextPath: 'HelloTest', war: '**/*.war'
-            }
-        }
+      
     }
 	}
