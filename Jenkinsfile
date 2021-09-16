@@ -24,7 +24,7 @@ pipeline {
         }
         stage("deploy to container"){
             steps{
-                deploy adapters: [tomcat8(credentialsId: 'bf6f41cc-a041-4d9f-ba7d-7e3f791dde53', path: '', url: 'http://localhost:1111/')], contextPath: 'HelloTest', war: '**/*.war'
+               deploy adapters: [tomcat8(credentialsId: 'tomcatcred', path: '', url: 'http://localhost:8000/')], contextPath: 'HelloTest', war: '**/*.war'
             }
         }
     }
