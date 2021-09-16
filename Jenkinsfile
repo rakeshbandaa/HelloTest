@@ -20,12 +20,7 @@ pipeline {
             steps{
                 bat "mvn sonar:sonar"
             }
-        }
-        
-        stage("nexus"){
-            steps{
-                bat "mvn clean deploy -P release"
-            }
+      
         }
         stage("deploy to container"){
             steps{
